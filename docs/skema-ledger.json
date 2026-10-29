@@ -1,0 +1,398 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://asset-borrow.local/schema/ledger-1.0.0.json",
+  "title": "Asset Borrow Ledger",
+  "description": "Skema ledger Asset Borrow. Data aset dan data pribadi tetap off-chain; yang dikirim ke Solana hanya memo berisi hash dan metadata minimum.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "app",
+    "network",
+    "program",
+    "hashAlgorithm",
+    "canonicalization",
+    "createdAt",
+    "updatedAt",
+    "lastHash",
+    "assets",
+    "requests",
+    "records"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path atau URL ke skema ini. Tidak dipakai aplikasi saat runtime."
+    },
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "app": {
+      "const": "asset-borrow"
+    },
+    "network": {
+      "description": "simulasi = belum broadcast; devnet/testnet/mainnet-beta = transaksi Solana nyata.",
+      "enum": ["simulasi", "localnet", "devnet", "testnet", "mainnet-beta"]
+    },
+    "program": {
+      "$ref": "#/definitions/program"
+    },
+    "hashAlgorithm": {
+      "const": "sha256"
+    },
+    "canonicalization": {
+      "description": "Aturan canonical JSON sebelum di-hash: key objek diurutkan leksikografis, array tetap berurutan, UTF-8, tanpa spasi.",
+      "const": "json-sort-keys-v1"
+    },
+    "createdAt": {
+      "$ref": "#/definitions/timestamp"
+    },
+    "updatedAt": {
+      "$ref": "#/definitions/timestamp"
+    },
+    "lastHash": {
+      "description": "Hash record terakhir. null jika ledger masih kosong.",
+      "anyOf": [{ "$ref": "#/definitions/hash" }, { "type": "null" }]
+    },
+    "assets": {
+      "description": "State aset saat ini (off-chain).",
+      "type": "array",
+      "items": { "$ref": "#/definitions/asset" }
+    },
+    "requests": {
+      "description": "State permintaan peminjaman saat ini (off-chain).",
+      "type": "array",
+      "items": { "$ref": "#/definitions/request" }
+    },
+    "records": {
+      "description": "Riwayat kejadian, urut naik berdasarkan seq. Setiap record adalah satu memo on-chain.",
+      "type": "array",
+      "items": { "$ref": "#/definitions/record" }
+    }
+  },
+  "definitions": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?(?:Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "wallet": {
+      "description": "Public key Solana dalam base58 (32-44 karakter).",
+      "type": "string",
+      "pattern": "^[1-9A-HJ-NP-Za-km-z]{32,44}$"
+    },
+    "signature": {
+      "description": "Signature transaksi Solana dalam base58.",
+      "type": "string",
+      "pattern": "^[1-9A-HJ-NP-Za-km-z]{64,88}$"
+    },
+    "assetId": {
+      "type": "string",
+      "pattern": "^AST-[0-9]{3}$"
+    },
+    "requestId": {
+      "type": "string",
+      "pattern": "^REQ-[0-9]{3}$"
+    },
+    "recordId": {
+      "type": "string",
+      "pattern": "^LOG-[0-9]{4}$"
+    },
+    "assetStatus": {
+      "enum": ["Tersedia", "Dipinjam", "Dikembalikan", "Diarsipkan"]
+    },
+    "requestStatus": {
+      "enum": ["Menunggu", "Ditandatangani", "Selesai"]
+    },
+    "eventType": {
+      "description": "Event alur utama dan arsip aset. Dua event dispute disiapkan untuk tahap berikutnya.",
+      "enum": [
+        "ASSET_REGISTER",
+        "BORROW_REQUEST",
+        "AGREEMENT_SIGN",
+        "ASSET_RETURN",
+        "ASSET_ARCHIVE",
+        "DISPUTE_OPEN",
+        "DISPUTE_RESOLVE"
+      ]
+    },
+    "photo": {
+      "description": "Foto off-chain: path /api/uploads/<file> (disimpan di data/uploads/), data URL, atau URL HTTPS. Jangan pernah mengirim isi foto ke on-chain.",
+      "type": "string",
+      "maxLength": 2100000,
+      "pattern": "^(data:image\\/(?:png|jpe?g|webp|gif|avif);base64,[A-Za-z0-9+/=]+|https?:\\/\\/[^\\s]+|\\/api\\/uploads\\/[A-Za-z0-9._-]+)$"
+    },
+    "program": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "id"],
+      "properties": {
+        "type": {
+          "enum": ["simulasi", "memo", "anchor"]
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 44
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "type": { "const": "simulasi" } },
+            "required": ["type"]
+          },
+          "then": {
+            "properties": { "id": { "const": "simulasi" } }
+          }
+        },
+        {
+          "if": {
+            "properties": { "type": { "enum": ["memo", "anchor"] } },
+            "required": ["type"]
+          },
+          "then": {
+            "properties": { "id": { "$ref": "#/definitions/wallet" } }
+          }
+        }
+      ]
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "nama", "kondisi", "kategori", "status"],
+      "properties": {
+        "id": { "$ref": "#/definitions/assetId" },
+        "nama": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "kondisi": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "kategori": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "status": { "$ref": "#/definitions/assetStatus" },
+        "hash": {
+          "description": "Hash record terakhir yang mengubah status aset ini.",
+          "$ref": "#/definitions/hash"
+        },
+        "foto": { "$ref": "#/definitions/photo" },
+        "fotoHash": {
+          "description": "Hash SHA-256 dari byte foto, untuk mengikat foto tanpa menyimpannya di ledger.",
+          "$ref": "#/definitions/hash"
+        }
+      }
+    },
+    "request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "assetId", "peminjam", "telepon", "status", "createdAt"],
+      "properties": {
+        "id": { "$ref": "#/definitions/requestId" },
+        "assetId": { "$ref": "#/definitions/assetId" },
+        "peminjam": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "telepon": {
+          "type": "string",
+          "pattern": "^[0-9+()\\-\\s]{8,20}$"
+        },
+        "status": { "$ref": "#/definitions/requestStatus" },
+        "hash": {
+          "description": "Hash record terakhir yang mengubah status permintaan ini.",
+          "$ref": "#/definitions/hash"
+        },
+        "wallet": { "$ref": "#/definitions/wallet" },
+        "createdAt": { "$ref": "#/definitions/timestamp" },
+        "signedAt": { "$ref": "#/definitions/timestamp" },
+        "returnedAt": { "$ref": "#/definitions/timestamp" }
+      }
+    },
+    "memo": {
+      "description": "Payload JSON yang dikirim ke Memo Program. Key dibuat pendek agar muat di batas memo Solana.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["v", "app", "evt", "asset", "req", "hash", "prev", "actor", "ts"],
+      "properties": {
+        "v": { "const": 1 },
+        "app": { "const": "asset-borrow" },
+        "evt": { "$ref": "#/definitions/eventType" },
+        "asset": { "$ref": "#/definitions/assetId" },
+        "req": {
+          "anyOf": [{ "$ref": "#/definitions/requestId" }, { "type": "null" }]
+        },
+        "hash": { "$ref": "#/definitions/hash" },
+        "prev": {
+          "anyOf": [{ "$ref": "#/definitions/hash" }, { "type": "null" }]
+        },
+        "actor": { "$ref": "#/definitions/wallet" },
+        "ts": { "$ref": "#/definitions/timestamp" }
+      }
+    },
+    "tx": {
+      "description": "Bukti transaksi Solana. null selama mode simulasi atau sebelum transaksi dikirim.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["signature", "slot", "blockTime", "status", "explorerUrl"],
+      "properties": {
+        "signature": { "$ref": "#/definitions/signature" },
+        "slot": { "type": "integer", "minimum": 0 },
+        "blockTime": { "type": "integer", "minimum": 0 },
+        "status": {
+          "enum": ["processed", "confirmed", "finalized", "failed"]
+        },
+        "explorerUrl": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://explorer\\.solana\\.com/tx/"
+        },
+        "error": { "type": "string", "maxLength": 500 }
+      }
+    },
+    "offchain": {
+      "description": "Snapshot data saat event terjadi. Snapshot tidak memuat hash record itu sendiri agar tidak sirkular. Foto sebaiknya diganti fotoHash.",
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "asset": { "$ref": "#/definitions/asset" },
+        "request": { "$ref": "#/definitions/request" },
+        "catatan": { "type": "string", "maxLength": 500 }
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "seq",
+        "type",
+        "assetId",
+        "requestId",
+        "actorWallet",
+        "timestamp",
+        "prevHash",
+        "salt",
+        "hash",
+        "assetStatusBefore",
+        "assetStatusAfter",
+        "requestStatusBefore",
+        "requestStatusAfter",
+        "memo",
+        "tx",
+        "offchain"
+      ],
+      "properties": {
+        "id": { "$ref": "#/definitions/recordId" },
+        "seq": { "type": "integer", "minimum": 1 },
+        "type": { "$ref": "#/definitions/eventType" },
+        "assetId": { "$ref": "#/definitions/assetId" },
+        "requestId": {
+          "anyOf": [{ "$ref": "#/definitions/requestId" }, { "type": "null" }]
+        },
+        "actorWallet": { "$ref": "#/definitions/wallet" },
+        "timestamp": { "$ref": "#/definitions/timestamp" },
+        "prevHash": {
+          "anyOf": [{ "$ref": "#/definitions/hash" }, { "type": "null" }]
+        },
+        "salt": {
+          "description": "Nonce acak 16 byte (32 hex) yang disimpan off-chain. Ikut di-hash agar hash PII tidak bisa ditebak dari memo publik, tetapi tidak dikirim ke on-chain.",
+          "type": "string",
+          "pattern": "^[a-f0-9]{32}$"
+        },
+        "hash": { "$ref": "#/definitions/hash" },
+        "assetStatusBefore": {
+          "anyOf": [{ "$ref": "#/definitions/assetStatus" }, { "type": "null" }]
+        },
+        "assetStatusAfter": {
+          "anyOf": [{ "$ref": "#/definitions/assetStatus" }, { "type": "null" }]
+        },
+        "requestStatusBefore": {
+          "anyOf": [{ "$ref": "#/definitions/requestStatus" }, { "type": "null" }]
+        },
+        "requestStatusAfter": {
+          "anyOf": [{ "$ref": "#/definitions/requestStatus" }, { "type": "null" }]
+        },
+        "memo": { "$ref": "#/definitions/memo" },
+        "tx": {
+          "anyOf": [{ "$ref": "#/definitions/tx" }, { "type": "null" }]
+        },
+        "offchain": { "$ref": "#/definitions/offchain" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "type": { "const": "ASSET_REGISTER" } },
+            "required": ["type"]
+          },
+          "then": {
+            "properties": {
+              "requestId": { "type": "null" },
+              "requestStatusBefore": { "type": "null" },
+              "requestStatusAfter": { "type": "null" },
+              "assetStatusBefore": { "type": "null" },
+              "assetStatusAfter": { "const": "Tersedia" }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "type": { "const": "BORROW_REQUEST" } },
+            "required": ["type"]
+          },
+          "then": {
+            "properties": {
+              "requestId": { "$ref": "#/definitions/requestId" },
+              "requestStatusBefore": { "type": "null" },
+              "requestStatusAfter": { "const": "Menunggu" },
+              "assetStatusBefore": { "enum": ["Tersedia", "Dikembalikan"] },
+              "assetStatusAfter": { "enum": ["Tersedia", "Dikembalikan"] }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "type": { "const": "AGREEMENT_SIGN" } },
+            "required": ["type"]
+          },
+          "then": {
+            "properties": {
+              "requestId": { "$ref": "#/definitions/requestId" },
+              "requestStatusBefore": { "const": "Menunggu" },
+              "requestStatusAfter": { "const": "Ditandatangani" },
+              "assetStatusBefore": { "enum": ["Tersedia", "Dikembalikan"] },
+              "assetStatusAfter": { "const": "Dipinjam" }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "type": { "const": "ASSET_RETURN" } },
+            "required": ["type"]
+          },
+          "then": {
+            "properties": {
+              "requestId": { "$ref": "#/definitions/requestId" },
+              "requestStatusBefore": { "const": "Ditandatangani" },
+              "requestStatusAfter": { "const": "Selesai" },
+              "assetStatusBefore": { "const": "Dipinjam" },
+              "assetStatusAfter": { "const": "Dikembalikan" }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "type": { "const": "ASSET_ARCHIVE" } },
+            "required": ["type"]
+          },
+          "then": {
+            "properties": {
+              "requestId": { "type": "null" },
+              "requestStatusBefore": { "type": "null" },
+              "requestStatusAfter": { "type": "null" },
+              "assetStatusBefore": { "enum": ["Tersedia", "Dikembalikan"] },
+              "assetStatusAfter": { "const": "Diarsipkan" }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

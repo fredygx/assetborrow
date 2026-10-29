@@ -1,0 +1,1033 @@
+{
+  "$schema": "../docs/skema-ledger.json",
+  "schemaVersion": "1.0.0",
+  "app": "asset-borrow",
+  "network": "devnet",
+  "program": {
+    "type": "memo",
+    "id": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr"
+  },
+  "hashAlgorithm": "sha256",
+  "canonicalization": "json-sort-keys-v1",
+  "createdAt": "2026-10-05T10:15:00+07:00",
+  "updatedAt": "2026-10-29T02:08:54.278Z",
+  "lastHash": "sha256:86281056b531b00c2fe9b6130ac3bc02ac790d6cb7c55157971c035c9c85ece5",
+  "assets": [
+    {
+      "id": "AST-001",
+      "nama": "Proyektor Epson EB-X500",
+      "kondisi": "Baik",
+      "kategori": "Audio Visual",
+      "status": "Diarsipkan",
+      "hash": "sha256:78f7608e8a0c77331f2c4263b037a66029a56d23c624884d92f7b84e420f9446"
+    },
+    {
+      "id": "AST-002",
+      "nama": "Laptop ThinkPad T480",
+      "kondisi": "Baik",
+      "kategori": "Komputer",
+      "status": "Diarsipkan",
+      "hash": "sha256:d4f8494087d95ab799f2d836c5a9dc1dddac4b643be1f3dd856cc17e07926347"
+    },
+    {
+      "id": "AST-003",
+      "nama": "Kamera Canon EOS R",
+      "kondisi": "Lecet ringan",
+      "kategori": "Dokumentasi",
+      "status": "Dikembalikan",
+      "hash": "sha256:4d7c70d89657f746d2cfee36d06dbb0aa0b24173a904b9ab509c35878967da0d"
+    },
+    {
+      "id": "AST-004",
+      "nama": "Speaker Portabel JBL",
+      "kondisi": "Baik",
+      "kategori": "Audio Visual",
+      "status": "Tersedia",
+      "hash": "sha256:52627c0456c3ddeb8a82441701e250cf805bd4393252309e8077edc5755bc925"
+    },
+    {
+      "id": "AST-005",
+      "nama": "Kamera Nikon ZF",
+      "kondisi": "Baik",
+      "kategori": "Kamera",
+      "status": "Dikembalikan",
+      "hash": "sha256:86281056b531b00c2fe9b6130ac3bc02ac790d6cb7c55157971c035c9c85ece5",
+      "foto": "/api/uploads/1793193019012-9dc96b0abf94-2acc56.jpg",
+      "fotoHash": "sha256:9dc96b0abf94e437e2aafcbf46e577381ecda6455f466e808c315fa066c8945d"
+    },
+    {
+      "id": "AST-006",
+      "nama": "Printet EcoTank",
+      "kondisi": "Baik",
+      "kategori": "Pencetak Kertas",
+      "status": "Tersedia",
+      "hash": "sha256:dc7a1ad6936e178ea0afdccf9685496201d408f67c03dbe9160b2da50a045494",
+      "foto": "/api/uploads/1793239687208-c0132e58e689-67437c.webp",
+      "fotoHash": "sha256:c0132e58e689f081c08d2e74de5184e21e23f7001b507fab4d6a8d4f03fa5dac"
+    }
+  ],
+  "requests": [
+    {
+      "id": "REQ-100",
+      "assetId": "AST-003",
+      "peminjam": "Siti Rahma",
+      "telepon": "0812-0000-2222",
+      "createdAt": "2026-10-06T10:00:00+07:00",
+      "wallet": "9aRbF3kPq2mZxW8yLtN5vC6hJ4dEuS1oGiY7nBQr2kLm",
+      "status": "Selesai",
+      "hash": "sha256:4d7c70d89657f746d2cfee36d06dbb0aa0b24173a904b9ab509c35878967da0d",
+      "signedAt": "2026-10-06T10:10:00+07:00",
+      "returnedAt": "2026-10-07T14:03:00+07:00"
+    },
+    {
+      "id": "REQ-101",
+      "assetId": "AST-001",
+      "peminjam": "Budi Mahasiswa",
+      "telepon": "0812-0000-1111",
+      "createdAt": "2026-10-06T09:00:00+07:00",
+      "wallet": "9aRbF3kPq2mZxW8yLtN5vC6hJ4dEuS1oGiY7nBQr2kLm",
+      "status": "Selesai",
+      "hash": "sha256:43670231e638c8a82ef12eda10803fa9ab3c1e53c3110606b0900124771ec138",
+      "signedAt": "2026-10-06T09:12:00+07:00",
+      "returnedAt": "2026-10-28T13:09:06.078Z"
+    },
+    {
+      "id": "REQ-102",
+      "assetId": "AST-002",
+      "peminjam": "Budi Mahasiswa",
+      "telepon": "0812-0000-1111",
+      "createdAt": "2026-10-08T08:00:00+07:00",
+      "status": "Selesai",
+      "hash": "sha256:5c2477084f5b441dbe411954ce3655a868762cc2f4cf9730fe0c3af3394b171b",
+      "wallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+      "signedAt": "2026-10-28T13:12:02.540Z",
+      "returnedAt": "2026-10-28T13:12:34.228Z"
+    },
+    {
+      "id": "REQ-103",
+      "assetId": "AST-005",
+      "peminjam": "Alvin",
+      "telepon": "082299993333",
+      "status": "Selesai",
+      "createdAt": "2026-10-29T02:08:35.211Z",
+      "hash": "sha256:86281056b531b00c2fe9b6130ac3bc02ac790d6cb7c55157971c035c9c85ece5",
+      "wallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+      "signedAt": "2026-10-29T02:08:41.269Z",
+      "returnedAt": "2026-10-29T02:08:48.136Z"
+    }
+  ],
+  "records": [
+    {
+      "id": "LOG-0001",
+      "seq": 1,
+      "type": "ASSET_REGISTER",
+      "assetId": "AST-001",
+      "requestId": null,
+      "actorWallet": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+      "timestamp": "2026-10-05T10:15:00+07:00",
+      "prevHash": null,
+      "salt": "26b4fd9b09e35fcecdd83cded9e21e52",
+      "assetStatusBefore": null,
+      "assetStatusAfter": "Tersedia",
+      "requestStatusBefore": null,
+      "requestStatusAfter": null,
+      "offchain": {
+        "asset": {
+          "id": "AST-001",
+          "nama": "Proyektor Epson EB-X500",
+          "kondisi": "Baik",
+          "kategori": "Audio Visual",
+          "status": "Tersedia"
+        }
+      },
+      "hash": "sha256:5572a263ac401496508444108bba33a3898a1ce65b0376f8c464265ed554d3f1",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "ASSET_REGISTER",
+        "asset": "AST-001",
+        "req": null,
+        "hash": "sha256:5572a263ac401496508444108bba33a3898a1ce65b0376f8c464265ed554d3f1",
+        "prev": null,
+        "actor": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+        "ts": "2026-10-05T10:15:00+07:00"
+      },
+      "tx": null
+    },
+    {
+      "id": "LOG-0002",
+      "seq": 2,
+      "type": "ASSET_REGISTER",
+      "assetId": "AST-002",
+      "requestId": null,
+      "actorWallet": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+      "timestamp": "2026-10-05T10:20:00+07:00",
+      "prevHash": "sha256:5572a263ac401496508444108bba33a3898a1ce65b0376f8c464265ed554d3f1",
+      "salt": "0d46ea76ef56fc9ca0104b2a4b9d2f01",
+      "assetStatusBefore": null,
+      "assetStatusAfter": "Tersedia",
+      "requestStatusBefore": null,
+      "requestStatusAfter": null,
+      "offchain": {
+        "asset": {
+          "id": "AST-002",
+          "nama": "Laptop ThinkPad T480",
+          "kondisi": "Baik",
+          "kategori": "Komputer",
+          "status": "Tersedia"
+        }
+      },
+      "hash": "sha256:d02c4e729a1aab77c78e717586019fc7bcd5c8f3e97bbe5836aced31daf2e55b",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "ASSET_REGISTER",
+        "asset": "AST-002",
+        "req": null,
+        "hash": "sha256:d02c4e729a1aab77c78e717586019fc7bcd5c8f3e97bbe5836aced31daf2e55b",
+        "prev": "sha256:5572a263ac401496508444108bba33a3898a1ce65b0376f8c464265ed554d3f1",
+        "actor": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+        "ts": "2026-10-05T10:20:00+07:00"
+      },
+      "tx": null
+    },
+    {
+      "id": "LOG-0003",
+      "seq": 3,
+      "type": "ASSET_REGISTER",
+      "assetId": "AST-003",
+      "requestId": null,
+      "actorWallet": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+      "timestamp": "2026-10-05T10:25:00+07:00",
+      "prevHash": "sha256:d02c4e729a1aab77c78e717586019fc7bcd5c8f3e97bbe5836aced31daf2e55b",
+      "salt": "582f82aece1f4de3db9dcbcd029d00c0",
+      "assetStatusBefore": null,
+      "assetStatusAfter": "Tersedia",
+      "requestStatusBefore": null,
+      "requestStatusAfter": null,
+      "offchain": {
+        "asset": {
+          "id": "AST-003",
+          "nama": "Kamera Canon EOS R",
+          "kondisi": "Lecet ringan",
+          "kategori": "Dokumentasi",
+          "status": "Tersedia"
+        }
+      },
+      "hash": "sha256:36a14db9be5c1c4161af640a39cb0df76b8a30e17d207604050128396019b1f3",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "ASSET_REGISTER",
+        "asset": "AST-003",
+        "req": null,
+        "hash": "sha256:36a14db9be5c1c4161af640a39cb0df76b8a30e17d207604050128396019b1f3",
+        "prev": "sha256:d02c4e729a1aab77c78e717586019fc7bcd5c8f3e97bbe5836aced31daf2e55b",
+        "actor": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+        "ts": "2026-10-05T10:25:00+07:00"
+      },
+      "tx": null
+    },
+    {
+      "id": "LOG-0004",
+      "seq": 4,
+      "type": "ASSET_REGISTER",
+      "assetId": "AST-004",
+      "requestId": null,
+      "actorWallet": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+      "timestamp": "2026-10-05T10:30:00+07:00",
+      "prevHash": "sha256:36a14db9be5c1c4161af640a39cb0df76b8a30e17d207604050128396019b1f3",
+      "salt": "b3444cd826b62d34b4d2e97b77601ce7",
+      "assetStatusBefore": null,
+      "assetStatusAfter": "Tersedia",
+      "requestStatusBefore": null,
+      "requestStatusAfter": null,
+      "offchain": {
+        "asset": {
+          "id": "AST-004",
+          "nama": "Speaker Portabel JBL",
+          "kondisi": "Baik",
+          "kategori": "Audio Visual",
+          "status": "Tersedia"
+        }
+      },
+      "hash": "sha256:52627c0456c3ddeb8a82441701e250cf805bd4393252309e8077edc5755bc925",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "ASSET_REGISTER",
+        "asset": "AST-004",
+        "req": null,
+        "hash": "sha256:52627c0456c3ddeb8a82441701e250cf805bd4393252309e8077edc5755bc925",
+        "prev": "sha256:36a14db9be5c1c4161af640a39cb0df76b8a30e17d207604050128396019b1f3",
+        "actor": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+        "ts": "2026-10-05T10:30:00+07:00"
+      },
+      "tx": null
+    },
+    {
+      "id": "LOG-0005",
+      "seq": 5,
+      "type": "BORROW_REQUEST",
+      "assetId": "AST-001",
+      "requestId": "REQ-101",
+      "actorWallet": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+      "timestamp": "2026-10-06T09:00:00+07:00",
+      "prevHash": "sha256:52627c0456c3ddeb8a82441701e250cf805bd4393252309e8077edc5755bc925",
+      "salt": "507b912e176eb6b58dd6f279d943360b",
+      "assetStatusBefore": "Tersedia",
+      "assetStatusAfter": "Tersedia",
+      "requestStatusBefore": null,
+      "requestStatusAfter": "Menunggu",
+      "offchain": {
+        "asset": {
+          "id": "AST-001",
+          "nama": "Proyektor Epson EB-X500",
+          "kondisi": "Baik",
+          "kategori": "Audio Visual",
+          "status": "Tersedia"
+        },
+        "request": {
+          "id": "REQ-101",
+          "assetId": "AST-001",
+          "peminjam": "Budi Mahasiswa",
+          "telepon": "0812-0000-1111",
+          "createdAt": "2026-10-06T09:00:00+07:00",
+          "wallet": "9aRbF3kPq2mZxW8yLtN5vC6hJ4dEuS1oGiY7nBQr2kLm",
+          "status": "Menunggu"
+        }
+      },
+      "hash": "sha256:b31d3f425c2fe75507423909de8ff1ba904c48745598b094b02aa476ecc80917",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "BORROW_REQUEST",
+        "asset": "AST-001",
+        "req": "REQ-101",
+        "hash": "sha256:b31d3f425c2fe75507423909de8ff1ba904c48745598b094b02aa476ecc80917",
+        "prev": "sha256:52627c0456c3ddeb8a82441701e250cf805bd4393252309e8077edc5755bc925",
+        "actor": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+        "ts": "2026-10-06T09:00:00+07:00"
+      },
+      "tx": null
+    },
+    {
+      "id": "LOG-0006",
+      "seq": 6,
+      "type": "AGREEMENT_SIGN",
+      "assetId": "AST-001",
+      "requestId": "REQ-101",
+      "actorWallet": "9aRbF3kPq2mZxW8yLtN5vC6hJ4dEuS1oGiY7nBQr2kLm",
+      "timestamp": "2026-10-06T09:12:00+07:00",
+      "prevHash": "sha256:b31d3f425c2fe75507423909de8ff1ba904c48745598b094b02aa476ecc80917",
+      "salt": "69a7fed1d4e8efef25c47c1e0c6cf7fe",
+      "assetStatusBefore": "Tersedia",
+      "assetStatusAfter": "Dipinjam",
+      "requestStatusBefore": "Menunggu",
+      "requestStatusAfter": "Ditandatangani",
+      "offchain": {
+        "asset": {
+          "id": "AST-001",
+          "nama": "Proyektor Epson EB-X500",
+          "kondisi": "Baik",
+          "kategori": "Audio Visual",
+          "status": "Dipinjam"
+        },
+        "request": {
+          "id": "REQ-101",
+          "assetId": "AST-001",
+          "peminjam": "Budi Mahasiswa",
+          "telepon": "0812-0000-1111",
+          "createdAt": "2026-10-06T09:00:00+07:00",
+          "wallet": "9aRbF3kPq2mZxW8yLtN5vC6hJ4dEuS1oGiY7nBQr2kLm",
+          "status": "Ditandatangani",
+          "signedAt": "2026-10-06T09:12:00+07:00"
+        }
+      },
+      "hash": "sha256:af59ac8021c63109c1f59244333c7cc58f9e57593d96d7ab2dcf0b9bbb91ddda",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "AGREEMENT_SIGN",
+        "asset": "AST-001",
+        "req": "REQ-101",
+        "hash": "sha256:af59ac8021c63109c1f59244333c7cc58f9e57593d96d7ab2dcf0b9bbb91ddda",
+        "prev": "sha256:b31d3f425c2fe75507423909de8ff1ba904c48745598b094b02aa476ecc80917",
+        "actor": "9aRbF3kPq2mZxW8yLtN5vC6hJ4dEuS1oGiY7nBQr2kLm",
+        "ts": "2026-10-06T09:12:00+07:00"
+      },
+      "tx": null
+    },
+    {
+      "id": "LOG-0007",
+      "seq": 7,
+      "type": "BORROW_REQUEST",
+      "assetId": "AST-003",
+      "requestId": "REQ-100",
+      "actorWallet": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+      "timestamp": "2026-10-06T10:00:00+07:00",
+      "prevHash": "sha256:af59ac8021c63109c1f59244333c7cc58f9e57593d96d7ab2dcf0b9bbb91ddda",
+      "salt": "c7324def6f02e9040fb1cf622892b9dd",
+      "assetStatusBefore": "Tersedia",
+      "assetStatusAfter": "Tersedia",
+      "requestStatusBefore": null,
+      "requestStatusAfter": "Menunggu",
+      "offchain": {
+        "asset": {
+          "id": "AST-003",
+          "nama": "Kamera Canon EOS R",
+          "kondisi": "Lecet ringan",
+          "kategori": "Dokumentasi",
+          "status": "Tersedia"
+        },
+        "request": {
+          "id": "REQ-100",
+          "assetId": "AST-003",
+          "peminjam": "Siti Rahma",
+          "telepon": "0812-0000-2222",
+          "createdAt": "2026-10-06T10:00:00+07:00",
+          "wallet": "9aRbF3kPq2mZxW8yLtN5vC6hJ4dEuS1oGiY7nBQr2kLm",
+          "status": "Menunggu"
+        }
+      },
+      "hash": "sha256:44c7417549e5d54bb2ee0259c49bc905cfda569ec1738bcd171ceec296cc29cf",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "BORROW_REQUEST",
+        "asset": "AST-003",
+        "req": "REQ-100",
+        "hash": "sha256:44c7417549e5d54bb2ee0259c49bc905cfda569ec1738bcd171ceec296cc29cf",
+        "prev": "sha256:af59ac8021c63109c1f59244333c7cc58f9e57593d96d7ab2dcf0b9bbb91ddda",
+        "actor": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+        "ts": "2026-10-06T10:00:00+07:00"
+      },
+      "tx": null
+    },
+    {
+      "id": "LOG-0008",
+      "seq": 8,
+      "type": "AGREEMENT_SIGN",
+      "assetId": "AST-003",
+      "requestId": "REQ-100",
+      "actorWallet": "9aRbF3kPq2mZxW8yLtN5vC6hJ4dEuS1oGiY7nBQr2kLm",
+      "timestamp": "2026-10-06T10:10:00+07:00",
+      "prevHash": "sha256:44c7417549e5d54bb2ee0259c49bc905cfda569ec1738bcd171ceec296cc29cf",
+      "salt": "ecfdd342129fd0ab331a45924860b2a0",
+      "assetStatusBefore": "Tersedia",
+      "assetStatusAfter": "Dipinjam",
+      "requestStatusBefore": "Menunggu",
+      "requestStatusAfter": "Ditandatangani",
+      "offchain": {
+        "asset": {
+          "id": "AST-003",
+          "nama": "Kamera Canon EOS R",
+          "kondisi": "Lecet ringan",
+          "kategori": "Dokumentasi",
+          "status": "Dipinjam"
+        },
+        "request": {
+          "id": "REQ-100",
+          "assetId": "AST-003",
+          "peminjam": "Siti Rahma",
+          "telepon": "0812-0000-2222",
+          "createdAt": "2026-10-06T10:00:00+07:00",
+          "wallet": "9aRbF3kPq2mZxW8yLtN5vC6hJ4dEuS1oGiY7nBQr2kLm",
+          "status": "Ditandatangani",
+          "signedAt": "2026-10-06T10:10:00+07:00"
+        }
+      },
+      "hash": "sha256:1c5dcdd336208956543d569eafbc790915aa59705ed17d0679e69381ec70bdeb",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "AGREEMENT_SIGN",
+        "asset": "AST-003",
+        "req": "REQ-100",
+        "hash": "sha256:1c5dcdd336208956543d569eafbc790915aa59705ed17d0679e69381ec70bdeb",
+        "prev": "sha256:44c7417549e5d54bb2ee0259c49bc905cfda569ec1738bcd171ceec296cc29cf",
+        "actor": "9aRbF3kPq2mZxW8yLtN5vC6hJ4dEuS1oGiY7nBQr2kLm",
+        "ts": "2026-10-06T10:10:00+07:00"
+      },
+      "tx": null
+    },
+    {
+      "id": "LOG-0009",
+      "seq": 9,
+      "type": "ASSET_RETURN",
+      "assetId": "AST-003",
+      "requestId": "REQ-100",
+      "actorWallet": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+      "timestamp": "2026-10-07T14:03:00+07:00",
+      "prevHash": "sha256:1c5dcdd336208956543d569eafbc790915aa59705ed17d0679e69381ec70bdeb",
+      "salt": "a1e3152b26f6aebcd13c41eb47a6274c",
+      "assetStatusBefore": "Dipinjam",
+      "assetStatusAfter": "Dikembalikan",
+      "requestStatusBefore": "Ditandatangani",
+      "requestStatusAfter": "Selesai",
+      "offchain": {
+        "asset": {
+          "id": "AST-003",
+          "nama": "Kamera Canon EOS R",
+          "kondisi": "Lecet ringan",
+          "kategori": "Dokumentasi",
+          "status": "Dikembalikan"
+        },
+        "request": {
+          "id": "REQ-100",
+          "assetId": "AST-003",
+          "peminjam": "Siti Rahma",
+          "telepon": "0812-0000-2222",
+          "createdAt": "2026-10-06T10:00:00+07:00",
+          "wallet": "9aRbF3kPq2mZxW8yLtN5vC6hJ4dEuS1oGiY7nBQr2kLm",
+          "status": "Selesai",
+          "signedAt": "2026-10-06T10:10:00+07:00",
+          "returnedAt": "2026-10-07T14:03:00+07:00"
+        }
+      },
+      "hash": "sha256:4d7c70d89657f746d2cfee36d06dbb0aa0b24173a904b9ab509c35878967da0d",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "ASSET_RETURN",
+        "asset": "AST-003",
+        "req": "REQ-100",
+        "hash": "sha256:4d7c70d89657f746d2cfee36d06dbb0aa0b24173a904b9ab509c35878967da0d",
+        "prev": "sha256:1c5dcdd336208956543d569eafbc790915aa59705ed17d0679e69381ec70bdeb",
+        "actor": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+        "ts": "2026-10-07T14:03:00+07:00"
+      },
+      "tx": null
+    },
+    {
+      "id": "LOG-0010",
+      "seq": 10,
+      "type": "BORROW_REQUEST",
+      "assetId": "AST-002",
+      "requestId": "REQ-102",
+      "actorWallet": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+      "timestamp": "2026-10-08T08:00:00+07:00",
+      "prevHash": "sha256:4d7c70d89657f746d2cfee36d06dbb0aa0b24173a904b9ab509c35878967da0d",
+      "salt": "ecb70cc6cf328d28a3adc3570414dce7",
+      "assetStatusBefore": "Tersedia",
+      "assetStatusAfter": "Tersedia",
+      "requestStatusBefore": null,
+      "requestStatusAfter": "Menunggu",
+      "offchain": {
+        "asset": {
+          "id": "AST-002",
+          "nama": "Laptop ThinkPad T480",
+          "kondisi": "Baik",
+          "kategori": "Komputer",
+          "status": "Tersedia"
+        },
+        "request": {
+          "id": "REQ-102",
+          "assetId": "AST-002",
+          "peminjam": "Budi Mahasiswa",
+          "telepon": "0812-0000-1111",
+          "createdAt": "2026-10-08T08:00:00+07:00",
+          "status": "Menunggu"
+        }
+      },
+      "hash": "sha256:9be0b1f818508c377e051a772b9f66a35df3f6ad452b233fb32cfdbee1828be8",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "BORROW_REQUEST",
+        "asset": "AST-002",
+        "req": "REQ-102",
+        "hash": "sha256:9be0b1f818508c377e051a772b9f66a35df3f6ad452b233fb32cfdbee1828be8",
+        "prev": "sha256:4d7c70d89657f746d2cfee36d06dbb0aa0b24173a904b9ab509c35878967da0d",
+        "actor": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg9pQ",
+        "ts": "2026-10-08T08:00:00+07:00"
+      },
+      "tx": null
+    },
+    {
+      "id": "LOG-0011",
+      "seq": 11,
+      "type": "ASSET_RETURN",
+      "assetId": "AST-001",
+      "requestId": "REQ-101",
+      "actorWallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+      "timestamp": "2026-10-28T13:09:06.078Z",
+      "assetStatusBefore": "Dipinjam",
+      "assetStatusAfter": "Dikembalikan",
+      "requestStatusBefore": "Ditandatangani",
+      "requestStatusAfter": "Selesai",
+      "offchain": {
+        "asset": {
+          "id": "AST-001",
+          "nama": "Proyektor Epson EB-X500",
+          "kondisi": "Baik",
+          "kategori": "Audio Visual",
+          "status": "Dikembalikan"
+        },
+        "request": {
+          "id": "REQ-101",
+          "assetId": "AST-001",
+          "peminjam": "Budi Mahasiswa",
+          "telepon": "0812-0000-1111",
+          "status": "Selesai",
+          "createdAt": "2026-10-06T09:00:00+07:00",
+          "wallet": "9aRbF3kPq2mZxW8yLtN5vC6hJ4dEuS1oGiY7nBQr2kLm",
+          "signedAt": "2026-10-06T09:12:00+07:00",
+          "returnedAt": "2026-10-28T13:09:06.078Z"
+        }
+      },
+      "prevHash": "sha256:9be0b1f818508c377e051a772b9f66a35df3f6ad452b233fb32cfdbee1828be8",
+      "salt": "d4ce55a9a27a6a6e21760a912c62a5d5",
+      "hash": "sha256:43670231e638c8a82ef12eda10803fa9ab3c1e53c3110606b0900124771ec138",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "ASSET_RETURN",
+        "asset": "AST-001",
+        "req": "REQ-101",
+        "hash": "sha256:43670231e638c8a82ef12eda10803fa9ab3c1e53c3110606b0900124771ec138",
+        "prev": "sha256:9be0b1f818508c377e051a772b9f66a35df3f6ad452b233fb32cfdbee1828be8",
+        "actor": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+        "ts": "2026-10-28T13:09:06.078Z"
+      },
+      "tx": {
+        "signature": "2Li2MrEY3nEfyRdeUgCMHEhYRceWV88naZT18GArLXrxDg64WnAFWKnx1QN2o5M8sPXVYzZdteHVvbbdL99S3rHb",
+        "slot": 516065184,
+        "blockTime": 1793192960,
+        "status": "confirmed",
+        "explorerUrl": "https://explorer.solana.com/tx/2Li2MrEY3nEfyRdeUgCMHEhYRceWV88naZT18GArLXrxDg64WnAFWKnx1QN2o5M8sPXVYzZdteHVvbbdL99S3rHb?cluster=devnet"
+      }
+    },
+    {
+      "id": "LOG-0012",
+      "seq": 12,
+      "type": "ASSET_REGISTER",
+      "assetId": "AST-005",
+      "requestId": null,
+      "actorWallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+      "timestamp": "2026-10-28T13:10:19.037Z",
+      "assetStatusBefore": null,
+      "assetStatusAfter": "Tersedia",
+      "requestStatusBefore": null,
+      "requestStatusAfter": null,
+      "offchain": {
+        "asset": {
+          "id": "AST-005",
+          "nama": "Kamera Nikon ZF",
+          "kondisi": "Baik",
+          "kategori": "Kamera",
+          "status": "Tersedia"
+        }
+      },
+      "prevHash": "sha256:43670231e638c8a82ef12eda10803fa9ab3c1e53c3110606b0900124771ec138",
+      "salt": "8bcc99ad0cd8f618f2ee92163c6873fc",
+      "hash": "sha256:4a0eecc4306f2f59846238d44cdaec4bb53e3c7bc5ee9d9371c853a621028800",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "ASSET_REGISTER",
+        "asset": "AST-005",
+        "req": null,
+        "hash": "sha256:4a0eecc4306f2f59846238d44cdaec4bb53e3c7bc5ee9d9371c853a621028800",
+        "prev": "sha256:43670231e638c8a82ef12eda10803fa9ab3c1e53c3110606b0900124771ec138",
+        "actor": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+        "ts": "2026-10-28T13:10:19.037Z"
+      },
+      "tx": {
+        "signature": "Y4UUT7Nbs3Q54KbUAB8pDo2GuymxmytUz5tBhG6jrb5tHwXWgi5aCqCszsgbXHhpN2kBD7Co7fa4zb5SbrvR3A7",
+        "slot": 516065444,
+        "blockTime": 1793193024,
+        "status": "confirmed",
+        "explorerUrl": "https://explorer.solana.com/tx/Y4UUT7Nbs3Q54KbUAB8pDo2GuymxmytUz5tBhG6jrb5tHwXWgi5aCqCszsgbXHhpN2kBD7Co7fa4zb5SbrvR3A7?cluster=devnet"
+      }
+    },
+    {
+      "id": "LOG-0013",
+      "seq": 13,
+      "type": "AGREEMENT_SIGN",
+      "assetId": "AST-002",
+      "requestId": "REQ-102",
+      "actorWallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+      "timestamp": "2026-10-28T13:12:02.540Z",
+      "assetStatusBefore": "Tersedia",
+      "assetStatusAfter": "Dipinjam",
+      "requestStatusBefore": "Menunggu",
+      "requestStatusAfter": "Ditandatangani",
+      "offchain": {
+        "asset": {
+          "id": "AST-002",
+          "nama": "Laptop ThinkPad T480",
+          "kondisi": "Baik",
+          "kategori": "Komputer",
+          "status": "Dipinjam"
+        },
+        "request": {
+          "id": "REQ-102",
+          "assetId": "AST-002",
+          "peminjam": "Budi Mahasiswa",
+          "telepon": "0812-0000-1111",
+          "status": "Ditandatangani",
+          "createdAt": "2026-10-08T08:00:00+07:00",
+          "wallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+          "signedAt": "2026-10-28T13:12:02.540Z"
+        }
+      },
+      "prevHash": "sha256:4a0eecc4306f2f59846238d44cdaec4bb53e3c7bc5ee9d9371c853a621028800",
+      "salt": "a09d2561c7c7d25d3048c69fed4907dc",
+      "hash": "sha256:62f962b561026e7a712f102d002bffbe33f79fe3db3012912256e10799a6944a",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "AGREEMENT_SIGN",
+        "asset": "AST-002",
+        "req": "REQ-102",
+        "hash": "sha256:62f962b561026e7a712f102d002bffbe33f79fe3db3012912256e10799a6944a",
+        "prev": "sha256:4a0eecc4306f2f59846238d44cdaec4bb53e3c7bc5ee9d9371c853a621028800",
+        "actor": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+        "ts": "2026-10-28T13:12:02.540Z"
+      },
+      "tx": {
+        "signature": "3f5VZU47fJFd3V5LuA8mQQf3AbWxdHSFWYPFYYvoqkoLeS6JL2VjtuW63ED3wQMcKKRCnyPnBafzrpR5grJc8JTU",
+        "slot": 516065883,
+        "blockTime": 1793193129,
+        "status": "confirmed",
+        "explorerUrl": "https://explorer.solana.com/tx/3f5VZU47fJFd3V5LuA8mQQf3AbWxdHSFWYPFYYvoqkoLeS6JL2VjtuW63ED3wQMcKKRCnyPnBafzrpR5grJc8JTU?cluster=devnet"
+      }
+    },
+    {
+      "id": "LOG-0014",
+      "seq": 14,
+      "type": "ASSET_RETURN",
+      "assetId": "AST-002",
+      "requestId": "REQ-102",
+      "actorWallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+      "timestamp": "2026-10-28T13:12:34.228Z",
+      "assetStatusBefore": "Dipinjam",
+      "assetStatusAfter": "Dikembalikan",
+      "requestStatusBefore": "Ditandatangani",
+      "requestStatusAfter": "Selesai",
+      "offchain": {
+        "asset": {
+          "id": "AST-002",
+          "nama": "Laptop ThinkPad T480",
+          "kondisi": "Baik",
+          "kategori": "Komputer",
+          "status": "Dikembalikan"
+        },
+        "request": {
+          "id": "REQ-102",
+          "assetId": "AST-002",
+          "peminjam": "Budi Mahasiswa",
+          "telepon": "0812-0000-1111",
+          "status": "Selesai",
+          "createdAt": "2026-10-08T08:00:00+07:00",
+          "wallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+          "signedAt": "2026-10-28T13:12:02.540Z",
+          "returnedAt": "2026-10-28T13:12:34.228Z"
+        }
+      },
+      "prevHash": "sha256:62f962b561026e7a712f102d002bffbe33f79fe3db3012912256e10799a6944a",
+      "salt": "82d99748fbc6d0f0a70dd2f8accb6e28",
+      "hash": "sha256:5c2477084f5b441dbe411954ce3655a868762cc2f4cf9730fe0c3af3394b171b",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "ASSET_RETURN",
+        "asset": "AST-002",
+        "req": "REQ-102",
+        "hash": "sha256:5c2477084f5b441dbe411954ce3655a868762cc2f4cf9730fe0c3af3394b171b",
+        "prev": "sha256:62f962b561026e7a712f102d002bffbe33f79fe3db3012912256e10799a6944a",
+        "actor": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+        "ts": "2026-10-28T13:12:34.228Z"
+      },
+      "tx": {
+        "signature": "3uEyS7Usg4v2uAAWPaiiek2yBUHmm5imX5DeHdEt13qmQUamK23js5CGvkiFAH6sjxf2tVdU1vqadwWuv6fVk2Do",
+        "slot": 516066010,
+        "blockTime": 1793193159,
+        "status": "confirmed",
+        "explorerUrl": "https://explorer.solana.com/tx/3uEyS7Usg4v2uAAWPaiiek2yBUHmm5imX5DeHdEt13qmQUamK23js5CGvkiFAH6sjxf2tVdU1vqadwWuv6fVk2Do?cluster=devnet"
+      }
+    },
+    {
+      "id": "LOG-0015",
+      "seq": 15,
+      "type": "ASSET_ARCHIVE",
+      "assetId": "AST-001",
+      "requestId": null,
+      "actorWallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+      "timestamp": "2026-10-28T13:30:46.913Z",
+      "assetStatusBefore": "Dikembalikan",
+      "assetStatusAfter": "Diarsipkan",
+      "requestStatusBefore": null,
+      "requestStatusAfter": null,
+      "offchain": {
+        "asset": {
+          "id": "AST-001",
+          "nama": "Proyektor Epson EB-X500",
+          "kondisi": "Baik",
+          "kategori": "Audio Visual",
+          "status": "Diarsipkan"
+        }
+      },
+      "prevHash": "sha256:5c2477084f5b441dbe411954ce3655a868762cc2f4cf9730fe0c3af3394b171b",
+      "salt": "034392397e85684792f539ccbde41f67",
+      "hash": "sha256:78f7608e8a0c77331f2c4263b037a66029a56d23c624884d92f7b84e420f9446",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "ASSET_ARCHIVE",
+        "asset": "AST-001",
+        "req": null,
+        "hash": "sha256:78f7608e8a0c77331f2c4263b037a66029a56d23c624884d92f7b84e420f9446",
+        "prev": "sha256:5c2477084f5b441dbe411954ce3655a868762cc2f4cf9730fe0c3af3394b171b",
+        "actor": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+        "ts": "2026-10-28T13:30:46.913Z"
+      },
+      "tx": null
+    },
+    {
+      "id": "LOG-0016",
+      "seq": 16,
+      "type": "ASSET_ARCHIVE",
+      "assetId": "AST-002",
+      "requestId": null,
+      "actorWallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+      "timestamp": "2026-10-29T02:06:54.068Z",
+      "assetStatusBefore": "Dikembalikan",
+      "assetStatusAfter": "Diarsipkan",
+      "requestStatusBefore": null,
+      "requestStatusAfter": null,
+      "offchain": {
+        "asset": {
+          "id": "AST-002",
+          "nama": "Laptop ThinkPad T480",
+          "kondisi": "Baik",
+          "kategori": "Komputer",
+          "status": "Diarsipkan"
+        }
+      },
+      "prevHash": "sha256:78f7608e8a0c77331f2c4263b037a66029a56d23c624884d92f7b84e420f9446",
+      "salt": "4b72ca070645f271da308193449924dd",
+      "hash": "sha256:d4f8494087d95ab799f2d836c5a9dc1dddac4b643be1f3dd856cc17e07926347",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "ASSET_ARCHIVE",
+        "asset": "AST-002",
+        "req": null,
+        "hash": "sha256:d4f8494087d95ab799f2d836c5a9dc1dddac4b643be1f3dd856cc17e07926347",
+        "prev": "sha256:78f7608e8a0c77331f2c4263b037a66029a56d23c624884d92f7b84e420f9446",
+        "actor": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+        "ts": "2026-10-29T02:06:54.068Z"
+      },
+      "tx": {
+        "signature": "4F6vijPToEPuuJPN8Cu7FMs8QmyqfJF2K1DthuqLnjtERKaAEZx4jpqEpiaWDoQGwNsKqNgZUYaXpAyrD4bEPACE",
+        "slot": 516259838,
+        "blockTime": 1793239620,
+        "status": "confirmed",
+        "explorerUrl": "https://explorer.solana.com/tx/4F6vijPToEPuuJPN8Cu7FMs8QmyqfJF2K1DthuqLnjtERKaAEZx4jpqEpiaWDoQGwNsKqNgZUYaXpAyrD4bEPACE?cluster=devnet"
+      }
+    },
+    {
+      "id": "LOG-0017",
+      "seq": 17,
+      "type": "ASSET_REGISTER",
+      "assetId": "AST-006",
+      "requestId": null,
+      "actorWallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+      "timestamp": "2026-10-29T02:08:07.242Z",
+      "assetStatusBefore": null,
+      "assetStatusAfter": "Tersedia",
+      "requestStatusBefore": null,
+      "requestStatusAfter": null,
+      "offchain": {
+        "asset": {
+          "id": "AST-006",
+          "nama": "Printet EcoTank",
+          "kondisi": "Baik",
+          "kategori": "Pencetak Kertas",
+          "status": "Tersedia"
+        }
+      },
+      "prevHash": "sha256:d4f8494087d95ab799f2d836c5a9dc1dddac4b643be1f3dd856cc17e07926347",
+      "salt": "e25c426b1a7042040163bd27b481ebf2",
+      "hash": "sha256:dc7a1ad6936e178ea0afdccf9685496201d408f67c03dbe9160b2da50a045494",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "ASSET_REGISTER",
+        "asset": "AST-006",
+        "req": null,
+        "hash": "sha256:dc7a1ad6936e178ea0afdccf9685496201d408f67c03dbe9160b2da50a045494",
+        "prev": "sha256:d4f8494087d95ab799f2d836c5a9dc1dddac4b643be1f3dd856cc17e07926347",
+        "actor": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+        "ts": "2026-10-29T02:08:07.242Z"
+      },
+      "tx": {
+        "signature": "4W544ja3iLWVWJC1XiZeVrthpw5dgJqgRpmeKi6unLxoZF8JwEiqFhmAFgaEH8v2rfLYUntSz5nSNSpfhzHGgtjN",
+        "slot": 516260167,
+        "blockTime": 1793239699,
+        "status": "confirmed",
+        "explorerUrl": "https://explorer.solana.com/tx/4W544ja3iLWVWJC1XiZeVrthpw5dgJqgRpmeKi6unLxoZF8JwEiqFhmAFgaEH8v2rfLYUntSz5nSNSpfhzHGgtjN?cluster=devnet"
+      }
+    },
+    {
+      "id": "LOG-0018",
+      "seq": 18,
+      "type": "BORROW_REQUEST",
+      "assetId": "AST-005",
+      "requestId": "REQ-103",
+      "actorWallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+      "timestamp": "2026-10-29T02:08:35.211Z",
+      "assetStatusBefore": "Tersedia",
+      "assetStatusAfter": "Tersedia",
+      "requestStatusBefore": null,
+      "requestStatusAfter": "Menunggu",
+      "offchain": {
+        "asset": {
+          "id": "AST-005",
+          "nama": "Kamera Nikon ZF",
+          "kondisi": "Baik",
+          "kategori": "Kamera",
+          "status": "Tersedia"
+        },
+        "request": {
+          "id": "REQ-103",
+          "assetId": "AST-005",
+          "peminjam": "Alvin",
+          "telepon": "082299993333",
+          "status": "Menunggu",
+          "createdAt": "2026-10-29T02:08:35.211Z"
+        }
+      },
+      "prevHash": "sha256:dc7a1ad6936e178ea0afdccf9685496201d408f67c03dbe9160b2da50a045494",
+      "salt": "27d5c07edc27b3257261fd32eff5effe",
+      "hash": "sha256:de5b88706d4cb72cb36c47624eb92713868db54385838cd3c0cfb7eb9beae53b",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "BORROW_REQUEST",
+        "asset": "AST-005",
+        "req": "REQ-103",
+        "hash": "sha256:de5b88706d4cb72cb36c47624eb92713868db54385838cd3c0cfb7eb9beae53b",
+        "prev": "sha256:dc7a1ad6936e178ea0afdccf9685496201d408f67c03dbe9160b2da50a045494",
+        "actor": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+        "ts": "2026-10-29T02:08:35.211Z"
+      },
+      "tx": {
+        "signature": "MdWGWEeHHNcUhtnhX5G5QjroiFzsdibvM9kwrGwbE3gArw21onSD4gndgmy77EA1UWvvXeY3G12dzKpkX7v7Rf6",
+        "slot": 516260248,
+        "blockTime": 1793239719,
+        "status": "confirmed",
+        "explorerUrl": "https://explorer.solana.com/tx/MdWGWEeHHNcUhtnhX5G5QjroiFzsdibvM9kwrGwbE3gArw21onSD4gndgmy77EA1UWvvXeY3G12dzKpkX7v7Rf6?cluster=devnet"
+      }
+    },
+    {
+      "id": "LOG-0019",
+      "seq": 19,
+      "type": "AGREEMENT_SIGN",
+      "assetId": "AST-005",
+      "requestId": "REQ-103",
+      "actorWallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+      "timestamp": "2026-10-29T02:08:41.269Z",
+      "assetStatusBefore": "Tersedia",
+      "assetStatusAfter": "Dipinjam",
+      "requestStatusBefore": "Menunggu",
+      "requestStatusAfter": "Ditandatangani",
+      "offchain": {
+        "asset": {
+          "id": "AST-005",
+          "nama": "Kamera Nikon ZF",
+          "kondisi": "Baik",
+          "kategori": "Kamera",
+          "status": "Dipinjam"
+        },
+        "request": {
+          "id": "REQ-103",
+          "assetId": "AST-005",
+          "peminjam": "Alvin",
+          "telepon": "082299993333",
+          "status": "Ditandatangani",
+          "createdAt": "2026-10-29T02:08:35.211Z",
+          "wallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+          "signedAt": "2026-10-29T02:08:41.269Z"
+        }
+      },
+      "prevHash": "sha256:de5b88706d4cb72cb36c47624eb92713868db54385838cd3c0cfb7eb9beae53b",
+      "salt": "8fccd65782b8c66788787c70b4ad7737",
+      "hash": "sha256:487fa114b157c243959f794b16d7cc9fdc691101c312109dc0b1962db8169618",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "AGREEMENT_SIGN",
+        "asset": "AST-005",
+        "req": "REQ-103",
+        "hash": "sha256:487fa114b157c243959f794b16d7cc9fdc691101c312109dc0b1962db8169618",
+        "prev": "sha256:de5b88706d4cb72cb36c47624eb92713868db54385838cd3c0cfb7eb9beae53b",
+        "actor": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+        "ts": "2026-10-29T02:08:41.269Z"
+      },
+      "tx": {
+        "signature": "MVZLFeaJnfTsHu6AtkX7CU5CwNQb8kkJgPwju6bWTNu5kBpU1yGN3k9wRBM87i653AjTGgT6cFQ3pT232oxhYNt",
+        "slot": 516260278,
+        "blockTime": 1793239726,
+        "status": "confirmed",
+        "explorerUrl": "https://explorer.solana.com/tx/MVZLFeaJnfTsHu6AtkX7CU5CwNQb8kkJgPwju6bWTNu5kBpU1yGN3k9wRBM87i653AjTGgT6cFQ3pT232oxhYNt?cluster=devnet"
+      }
+    },
+    {
+      "id": "LOG-0020",
+      "seq": 20,
+      "type": "ASSET_RETURN",
+      "assetId": "AST-005",
+      "requestId": "REQ-103",
+      "actorWallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+      "timestamp": "2026-10-29T02:08:48.136Z",
+      "assetStatusBefore": "Dipinjam",
+      "assetStatusAfter": "Dikembalikan",
+      "requestStatusBefore": "Ditandatangani",
+      "requestStatusAfter": "Selesai",
+      "offchain": {
+        "asset": {
+          "id": "AST-005",
+          "nama": "Kamera Nikon ZF",
+          "kondisi": "Baik",
+          "kategori": "Kamera",
+          "status": "Dikembalikan"
+        },
+        "request": {
+          "id": "REQ-103",
+          "assetId": "AST-005",
+          "peminjam": "Alvin",
+          "telepon": "082299993333",
+          "status": "Selesai",
+          "createdAt": "2026-10-29T02:08:35.211Z",
+          "wallet": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+          "signedAt": "2026-10-29T02:08:41.269Z",
+          "returnedAt": "2026-10-29T02:08:48.136Z"
+        }
+      },
+      "prevHash": "sha256:487fa114b157c243959f794b16d7cc9fdc691101c312109dc0b1962db8169618",
+      "salt": "812324fe5e38e1b26abfae80f84d0f6b",
+      "hash": "sha256:86281056b531b00c2fe9b6130ac3bc02ac790d6cb7c55157971c035c9c85ece5",
+      "memo": {
+        "v": 1,
+        "app": "asset-borrow",
+        "evt": "ASSET_RETURN",
+        "asset": "AST-005",
+        "req": "REQ-103",
+        "hash": "sha256:86281056b531b00c2fe9b6130ac3bc02ac790d6cb7c55157971c035c9c85ece5",
+        "prev": "sha256:487fa114b157c243959f794b16d7cc9fdc691101c312109dc0b1962db8169618",
+        "actor": "ASiSDHiDuUFb6MH13WwzMWKtSHMKHrGvPQcxZteYdkFj",
+        "ts": "2026-10-29T02:08:48.136Z"
+      },
+      "tx": {
+        "signature": "2a6EsRS3m646KT9bYMyFJCK95ibg5k8iDVuK4BbX7jTaYzyUKwMBsHD1CHYx61nHmGQNSSFJDVXNEaHM7tXBgRih",
+        "slot": 516260305,
+        "blockTime": 1793239733,
+        "status": "confirmed",
+        "explorerUrl": "https://explorer.solana.com/tx/2a6EsRS3m646KT9bYMyFJCK95ibg5k8iDVuK4BbX7jTaYzyUKwMBsHD1CHYx61nHmGQNSSFJDVXNEaHM7tXBgRih?cluster=devnet"
+      }
+    }
+  ]
+}
